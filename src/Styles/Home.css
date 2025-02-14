@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.home-container {
+    width: 99.05vw;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('../Images/header.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.hero-title span {
+    display: block;
+    color: white;
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 1.4rem;
+    line-height: 1;
+}
+
+.hero-title .experience {
+    color: #FFA500;
+    font-size: 1.5rem;
+    letter-spacing: 2.5rem;
+    margin-top: 0rem;
+}
+
+.travel-cards {
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1100px;
+    width: 70%;
+    padding: 0;
+    position: absolute;
+    bottom: 8vh;
+}
+
+.travel-link-container {
+    flex: 1 1;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 180px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.travel-link-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    z-index: 0;
+}
+
+.travel-link-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.link-content {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0 0 20px 20px;
+}
+
+.link-content h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.link-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+    padding: 0.5rem;
+}
+
+.travel-link-container:hover {
+    transform: translateY(-10px);
+}
+
+.link-content a:hover {
+    transform: translateX(5px);
+}
+
+.arrow-circle {
+    background-color: transparent;
+    border: 1.5px solid white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.arrow-circle a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+
+.arrow-circle a::before {
+    content: '>';
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin-bottom: 7px;
+    margin-left: 3px;
+}
+
+.travel-link-container:hover .arrow-circle {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title span {
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
+    
+    .hero-title .experience {
+        font-size: 2.5rem;
+        letter-spacing: 1rem;
+    }
+
+    .travel-cards {
+        flex-direction: column;
+        gap: 1rem;
+        bottom: 5vh;
+    }
+
+    .travel-link-container {
+        height: 160px;
+    }
+
+    .link-content {
+        padding: 1.5rem;
+    }
+
+    .link-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-height: 800px) {
+    .travel-link-container {
+        height: 250px;
+    }
+}
+
+/* Para pantallas muy anchas */
+@media (min-aspect-ratio: 16/9) {
+    .hero-section {
+        background-size: 100% 100%;
+    }
+}
+
+/* Para pantallas muy altas */
+@media (max-aspect-ratio: 9/16) {
+    .hero-section {
+        background-size: 100% 100%;
+    }
+}
+
+.nosotros-section {
+    padding: 1 15% 3rem;
+    margin-top: 5rem;
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    scroll-margin-top: 80px;
+}
+
+.nosotros-title {
+    text-align: center;
+    color: #D4A853;
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.nosotros-text {
+    text-align: justify;
+    line-height: 1.8;
+    color: #333;
+    font-size: 1.1rem;
+    max-width: 1200px;
+    margin-top: -4%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.instagram-section {
+    padding: 0 10%;
+    position: absolute;
+    margin-top: 30%;
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.instagram-handle {
+    color: #D4A853;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: -8%;
+}
+
+.instagram-gallery {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.gallery-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.gallery-image {
+    width: calc(25% - 0.75rem);
+    height: 240px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.nav-button.prev {
+    left: -20px;
+}
+
+.nav-button.next {
+    right: -20px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .instagram-section {
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .instagram-section {
+        padding: 0 5%;
+    }
+    
+    .instagram-gallery {
+        height: 250px;
+    }
+}
